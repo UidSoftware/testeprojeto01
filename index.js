@@ -13,15 +13,6 @@ app.get('/',(req, res)=>{
 
     /**
      * segundo parametro serve para renderizar automaticamente
-     * git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
-
-     * git usuario UidSoftware
-        Run
-
-          git config --global user.email "uidsoftwaretecnologia@gmail.com"
-          git config --global user.name "UidSoftware"
-     * 
      */
    res.render('index', {nome:'Luiz Eduardo G Ferreira'}); 
    
