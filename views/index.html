@@ -1,9 +1,23 @@
 <html>
-
+<head>
+    <title>Lista de tarefas | Projeto 01</title>
+    <link href="/public/style.css" rel="stylesheet"/>
+</head>
 <body>
     <h1>SERVER RUM</h1>
     <h2>START PAGE</h2>
-    <p>Este site foi criado por <%= nome %>. </p>
-    
+   
+    <div class="tarefas">
+        <%for(let i = 0;i< tarefasList.length; i++){%>
+
+            <p><%=tarefasList[i]%> | <a href="/deletar/<%= i %>">X</a></p>
+
+        <%}%>
+    </div>
+    <div class="rodape">
+
+        <!--<p>Este site foi criado por <%= nome %>. </p>-->
+
+    </div>
 </body>
 </html>

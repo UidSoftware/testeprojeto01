@@ -9,15 +9,30 @@ app.use('/public', express.static(path.join(__dirname, 'public'))); //tudo que Ã
 app.set('views', path.join(__dirname, '/views')); //pegar diretorio completo.
 
 
+var tarefas = [ 'Arrumar o quarto',
+                'Compras no supermercado',
+                'Arrumar a casa',
+                'Estudar'];
+
 app.get('/',(req, res)=>{
 
     /**
-     * segundo parametro serve para renderizar automaticamente
+     * segundo parametro'{}', serve para renderizar automaticamente
+     * nome:'Luiz Eduardo G Ferreira',
      */
-   res.render('index', {nome:'Luiz Eduardo G Ferreira'}); 
+   res.render('index', { tarefasList:tarefas}); 
    
-
 });
+
+app.get('/deletar/:id',(req,res)=>{
+
+    tarefas = tarefas.filter((val,index)=>{
+        if(index != req.params.id){
+            return val;
+        }
+    })
+    res.render('index',{tarefasList:tarefas});
+})
 
 app.listen(3000, ()=>{
     console.log('SERVER RUN!');
