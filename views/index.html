@@ -7,17 +7,22 @@
     <h1>SERVER RUM</h1>
     <h2>START PAGE</h2>
    
+    
     <div class="tarefas">
+        <form method="post" >
+            <input type="text" name="tarefa" /><br/>
+            <input type="submit" name="acao" value="Inserir na Lista" />
+        </form>
         <%for(let i = 0;i< tarefasList.length; i++){%>
 
             <p><%=tarefasList[i]%> | <a href="/deletar/<%= i %>">X</a></p>
 
         <%}%>
     </div>
-    <div class="rodape">
+    <section class="rodape">
 
-        <!--<p>Este site foi criado por <%= nome %>. </p>-->
-
-    </div>
+    </section>
+    
+    
 </body>
 </html>
